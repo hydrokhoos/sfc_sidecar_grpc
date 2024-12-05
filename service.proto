@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service Service {
+  rpc ProcessData (DataRequest) returns (DataResponse);
+}
+
+message DataRequest {
+  repeated bytes data = 1;  // bytes型のリスト
+}
+
+message DataResponse {
+  string status = 1;
+  bytes processed_data = 2;  // bytes型の選択データ
+  string processed_timestamp = 3;
+}
