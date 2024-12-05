@@ -2,8 +2,8 @@ import grpc
 import service_pb2
 import service_pb2_grpc
 
-def send_data_to_service(data):
-    with grpc.insecure_channel('localhost:50051') as channel:
+def send_data_to_service(data, address='localhost', port=50051):
+    with grpc.insecure_channel(address + ':' + str(port)) as channel:
         stub = service_pb2_grpc.ServiceStub(channel)
         request = service_pb2.DataRequest(data=data)
         response = stub.ProcessData(request)
