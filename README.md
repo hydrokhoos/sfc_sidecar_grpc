@@ -19,9 +19,3 @@ This repository contains a gRPC-based service implementation.
    ```bash
    python grpc_send_data.py
    ```
-
-## Testing
-Run unit tests:
-```bash
-pytest tests/
-```
